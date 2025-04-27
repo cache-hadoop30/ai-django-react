@@ -19,7 +19,11 @@ In the terminal, run the following commands:
 pip install virtualenv
 
 # Create a virtual environment
+Option 1:
 virtualenv venv
+OR
+Option 2:
+python -m venv venv
 
 
 # Activate the virtual environment
