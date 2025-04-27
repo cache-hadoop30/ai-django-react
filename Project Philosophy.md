@@ -17,38 +17,7 @@ This project is designed to work with AI tools (ChatGPT, Copilot, etc.) using th
 > - Encourage hands-on building with mini-tasks  
 > - Answer questions with patient mentorship"*
 
-**Key Features:**  
-✅ Learn by building real-world projects  
-✅ AI explains concepts like a caring mentor  
-✅ Progressive difficulty with exercises  
-✅ Tailwind CSS for modern styling  
 
 ---
-
-## 🛠️ Technical Setup
-
-### **Backend (Django)**
-```bash
-# 1. Create environment
-mkdir myproject && cd myproject
-python3 -m venv env  # Linux/Mac
-env\Scripts\activate # Windows
-
-# 2. Install dependencies
-pip install django djangorestframework
-
-# 3. Initialize project
-django-admin startproject backend .
-python manage.py startapp api
-
-# 4. Configure settings.py
-INSTALLED_APPS = [
-    ...,
-    'rest_framework',
-    'api'
-]
-
-# 5. Run server
-python manage.py runserver
 
 
