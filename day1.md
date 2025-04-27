@@ -6,7 +6,7 @@ First, you need to install Django. If you haven't installed it yet, use the foll
 ```bash
 pip install django
 
-### 2. Create a Django Project
+2. Create a Django Project
 Now, let’s create a new Django project. In the terminal, navigate to the folder where you want to set up your project and run:
 
 ```bash
