@@ -32,7 +32,11 @@ source venv/bin/activate
 Now your environment is set up, and we can move on to installing Django.
 
 ![image](https://github.com/user-attachments/assets/dff5ba46-4839-4ba3-ab6c-6a1132966208)
+
+
 Don't mind the warning. When you see the env folder at the left side panel, it means the env is created.
+
+
 ![image](https://github.com/user-attachments/assets/d7828878-fef1-4efd-9774-697e9abab8a6)
 
 
@@ -44,6 +48,10 @@ First, you need to install Django. If you haven't installed it yet, use the foll
 pip install django
 ```
 
+![image](https://github.com/user-attachments/assets/7d4eb1ba-0256-42b6-a869-af97d0e23aa5)
+
+
+
 ### 3. Create a Django Project
 Now, let’s create a new Django project. In the terminal, navigate to the folder where you want to set up your project and run:
 
@@ -53,6 +61,24 @@ django-admin startproject contact_management
 
 This will create a directory called contact_management with all the necessary files for your Django project.
 
+![image](https://github.com/user-attachments/assets/2aa9eef9-5c54-48a2-8552-bed195a2bcb9)
+
+# Folder Structure
+```bash
+contact_management/
+    manage.py
+    contact_management/
+        __init__.py
+        settings.py
+        urls.py
+        wsgi.py
+        asgi.py
+```
+
+![image](https://github.com/user-attachments/assets/2c0f560c-63c8-48c1-806e-437493f0bd88)
+
+
+
 ### 4. Create a Django App
 Now, let’s create an app for managing contacts. In your project directory, run:
 
@@ -61,6 +87,10 @@ cd contact_management
 python manage.py startapp contacts
 ```
 This will create a new folder contacts inside your project directory.
+
+
+![image](https://github.com/user-attachments/assets/51cc12db-0b8d-4494-89b0-32fab8a76f1a)
+        
 
 ### 5. Configure the Database
 Now, let’s set up the database. By default, Django uses SQLite for development purposes, so you don't need to configure it. You can use the default database settings for now. 
@@ -94,16 +124,23 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
 ```
 
+![image](https://github.com/user-attachments/assets/8858a0bb-7019-4924-a0c2-d2e4c0f471d0)
+
+
+![image](https://github.com/user-attachments/assets/cf1f487b-ffe2-45a4-ac1c-415ca1487ca6)
 
 # Explanation of fields:
 
-first_name and last_name: The contact's first and last name.
-email: A unique email address for the contact.
-phone_number: Contact's phone number (could be validated with regular expressions if needed).
-address: A field to store the contact’s address.
+- **first_name** and **last_name**: The contact's first and last name.
+- **email**: A unique email address for the contact.
+- **phone_number**: Contact's phone number (could be validated with regular expressions if needed).
+- **address**: A field to store the contact’s address.
 
+
+![image](https://github.com/user-attachments/assets/67c88117-4f66-492b-8eec-cd8b1e84d9db)
 
 
 ## 7. Register the Model with Admin
@@ -122,6 +159,10 @@ admin.site.register(Contact)
 This will allow the Contact model to be visible in the Django admin interface.
 
 
+![image](https://github.com/user-attachments/assets/c828bb5b-8e48-4c3e-831c-2754d06902df)
+
+
+
 ## 8. Add the App to INSTALLED_APPS
 
 Go to `settings.py` and find the `INSTALLED_APPS` section. Add `'contacts'` to the list of installed apps:
@@ -133,9 +174,16 @@ INSTALLED_APPS = [
 ]
 ```
 
+![image](https://github.com/user-attachments/assets/2d9c9481-e6a3-4a62-a888-8d505c37fd57)
+
+
 ## 9. Run Migrations to Create the Database Tables
 
 Now, we need to run migrations to create the database tables based on the model you just created.
+
+```bash
+cd contact_management
+```
 
 First, let’s make the migrations:
 
@@ -152,6 +200,8 @@ python manage.py migrate
 
 This will create the Contact table in the SQLite database.
 
+![image](https://github.com/user-attachments/assets/9283b928-bfda-46a3-b760-d5614923a0a3)
+
 
 ## 10. Test the Contact Model with the Admin Panel
 
@@ -161,11 +211,30 @@ Run the development server to make sure everything is set up correctly:
 python manage.py runserver
 ```
 
+
+![image](https://github.com/user-attachments/assets/fd58da79-0205-4d6a-be69-6a6883df2cbf)
+
+
 Now, open your browser and go to http://127.0.0.1:8000/admin/. You'll need to create a superuser if you haven't already:
+
+Open the terminal in Visual Studio Code:
 
 ```bash
 python manage.py createsuperuser
 ```
+
+After creating the admin, now run again the server:
+
+```bash
+python manage.py runserver
+```
+
+Go to http://127.0.0.1:8000/admin/ and login with your credentials.
+
+This is the Dashboard after successfully login.
+
+![image](https://github.com/user-attachments/assets/eefe5008-ca51-46ec-824d-71dfa7baa167)
+
 
 Follow the prompts to create a superuser account. Once you’ve done that, log in to the admin panel and you should see the Contacts model listed there. You can add, edit, or delete contacts.
 
